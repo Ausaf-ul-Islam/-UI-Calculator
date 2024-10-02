@@ -11,19 +11,39 @@ body {
     overflow: hidden;
 }
 
-/* Calculator Container with Glassmorphism Effect */
+/* Calculator Container with Glassmorphism Effect and Infinite Shadow Animation */
 .calculator {
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     max-width: 400px;
     width: 100%;
     margin: 0 15px;
+    animation: shadowColorChange 5s infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Initial shadow */
+}
+
+/* Infinite Color-Changing Shadow Animation */
+@keyframes shadowColorChange {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    25% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    }
+    75% {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
 }
 
 /* Display Screen Styling */
